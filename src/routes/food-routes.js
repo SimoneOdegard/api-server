@@ -24,8 +24,8 @@ async function getFood(req, res) {
 }
 
 async function getOneFood(req, res) {
-  const id = await req.params.id;
-  let theFood = food.read(id);
+  const id = req.params.id;
+  let theFood = await food.read(id);
   res.status(200).json(theFood);
 }
 
