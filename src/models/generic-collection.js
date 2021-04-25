@@ -6,7 +6,7 @@ class GenericCollection {
   }
 
   create(record) {
-    let newRecord = new this.model(record);
+    let newRecord = this.model(record);
     newRecord.save();
     return newRecord
   }

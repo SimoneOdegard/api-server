@@ -18,34 +18,34 @@ snackRouter.delete('/snack/:id', deleteSnack);
 
 // RESTful route handlers
 
-function getSnack(req, res) {
-  let getAllSnack = snack.read();
+async function getSnack(req, res) {
+  let getAllSnack = await snack.read();
   res.status(200).json(getAllSnack);
 }
 
-function getOneSnack(req, res) {
-  const id = parseInt(req.params.id);
-  let theSnack = snack.read(id);
+async function getOneSnack(req, res) {
+  const id = req.params.id;
+  let theSnack = await snack.read(id);
   res.status(200).json(theSnack);
 }
 
-function createSnack(req, res) {
+async function createSnack(req, res) {
   let content = req.body;
-  let createdSnack = snack.create(content);
+  let createdSnack = await snack.create(content);
   res.status(201).json(createdSnack);
 }
 
-function updateSnack(req, res) {
-  const id = parseInt(req.params.id);
+async function updateSnack(req, res) {
+  const id = req.params.id;
   let data = req.body;
-  let updatedSnack = snack.update( id, data );
+  let updatedSnack = await snack.update( id, data );
   res.status(200).json(updatedSnack);
 }
 
-function deleteSnack(req, res) {
-  const id = parseInt(req.params.id);
-  snack.delete( id );
-  res.status(200).send('Success! Item deleted.');
+async function deleteSnack(req, res) {
+  const id = req.params.id;
+  let deletedSnack = await snack.delete( id );
+  res.status(200).json({deletedSnack});
 }
 
 module.exports = snackRouter;

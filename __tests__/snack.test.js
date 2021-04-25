@@ -9,7 +9,7 @@ const snack = new GenericCollection(Snack);
 
 describe('Snack Actions', () => {
 
-  it('can create() a new snack item', () => {
+  xit('can create() a new snack item', () => {
     let obj = { name: 'test snack 1', calories: 9999, type: 'COOKIE' };
     let expected = { name: 'test snack 1', calories: 9999, type: 'COOKIE' };
 
@@ -22,7 +22,7 @@ describe('Snack Actions', () => {
 
   });
 
-  it('can read() a single snack item', () => {
+  xit('can read() a single snack item', () => {
     let obj = { name: 'test snack 2', calories: 9999, type: 'CHIP' };
     let expected = { name: 'test snack 2', calories: 9999, type: 'CHIP' };
     

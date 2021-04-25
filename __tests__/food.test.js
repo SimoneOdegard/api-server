@@ -3,8 +3,8 @@
 require('@code-fellows/supergoose');
 
 const GenericCollection = require ('../src/models/generic-collection.js');
-const foodModel = require('../src/models/food-schema.js');
-const food = new GenericCollection(foodModel);
+const FoodModel = require('../src/models/food-schema.js');
+const food = new GenericCollection(FoodModel);
 
 describe('Food Actions', () => {
 
@@ -23,6 +23,7 @@ describe('Food Actions', () => {
 
   it('can read() a single food item', () => {
     let obj = { name: 'test food 2', calories: 9999, type: 'VEG' };
+    console.log('object', obj)
     let expected = { name: 'test food 2', calories: 9999, type: 'VEG' };
     
     return food.create(obj)
