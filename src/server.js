@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const logger = require('./middleware/logger.js');
@@ -11,7 +12,7 @@ const todoRoutes = require('./routes/todo-routes.js');
 const notFound = require('./error-handling/404.js');
 const errors = require('./error-handling/500.js');
 
-
+app.use(cors());
 app.use(express.json());
 
 app.use(logger);
