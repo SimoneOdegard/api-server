@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 // const GenericCollection = require('./models/generic-collection.js');
 // const food = new GenericCollection();
 
-const MONGODB_URI = 'mongodb://localhost:27017/food';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true}
 
