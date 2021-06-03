@@ -25,9 +25,10 @@ describe('API SERVER:', () => {
   /* ========== create a new item ========== */
 
   it('should create a new item in the db', async () => {
-    const response = await mockRequest.post('/food').send({ name: 'sushi'})
+    const response = await mockRequest.post('/food').send({ name: 'sushi', calories: 999, type: 'MEAT'})
     expect(response.status).toBe(201);
-    expect(response.body.record.name).toEqual('sushi');
+    expect(response.body.calories).toEqual(999);
+    console.log('trying to see if this works', response.body);
   });
 
   it('should create a new item in the db', async () => {
@@ -85,10 +86,10 @@ describe('API SERVER:', () => {
     expect(response.status).toBe(200);
   });
 
-  it('should delete an item in the db', async () => {
-    const id = // needs to grab body._id
-    const response = await mockRequest.delete('/snack/`${id}`)
-    expect(response.status).toBe(200);
-  });
+  // it('should delete an item in the db', async () => {
+  //   const id = // needs to grab body._id
+  //   const response = await mockRequest.delete('/snack/`${id}`)
+  //   expect(response.status).toBe(200);
+  // });
 
 })
