@@ -11,7 +11,7 @@ const categoriesRouter = express.Router();
 // RESTful routes
 
 categoriesRouter.get('/categories', getCategories);
-categoriesRouter.get('/categories/:id', getOneCategories;
+categoriesRouter.get('/categories/:id', getOneCategories);
 categoriesRouter.post('/categories', createCategories)
 categoriesRouter.put('/categories/:id', updateCategories);
 categoriesRouter.delete('/categories/:id', deleteCategories);
