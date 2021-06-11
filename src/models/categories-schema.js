@@ -8,6 +8,6 @@ const categoriesSchema = mongoose.Schema({
   description: { type: String, required: true},
 });
 
-const categoriesModel = mongoose.model('todo', categoriesSchema);
+const categoriesModel = mongoose.model('categories', categoriesSchema);
 
 module.exports = categoriesModel;
